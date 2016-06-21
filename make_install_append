@@ -1,0 +1,3 @@
+pushd %{buildroot}%{_bindir}
+ln -s ctags etags
+popd

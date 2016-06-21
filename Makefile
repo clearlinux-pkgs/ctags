@@ -1,3 +1,5 @@
 PKG_NAME := ctags
-URL :=http://prdownloads.sourceforge.net/ctags/ctags-5.8.tar.gz
+URL := http://downloads.sourceforge.net/ctags/ctags-5.8.tar.gz
+ARCHIVES :=
+
 include ../common/Makefile.common
