@@ -1,0 +1,22 @@
+--- ctags-5.8/Makefile.in~	2009-07-04 05:29:28.000000000 +0000
++++ ctags-5.8/Makefile.in	2016-06-21 23:20:37.276409259 +0000
+@@ -98,7 +98,7 @@
+ all: $(CTAGS_EXEC) $(READ_LIB)
+ 
+ $(CTAGS_EXEC): $(OBJECTS)
+-	$(CC) $(LDFLAGS) -o $@ $(OBJECTS) $(LIBS)
++	$(CC) $(LDFLAGS) $(CFLAGS) -o $@ $(OBJECTS) $(LIBS)
+ 
+ dctags$(EXEEXT): debug.c $(SOURCES) $(HEADERS)
+ 	$(CC) -I. -I$(srcdir) $(DEFS) -DDEBUG -g $(LDFLAGS) -o $@ debug.c $(SOURCES)
+--- ctags-5.8/lregex.c~	2007-09-10 02:36:48.000000000 +0000
++++ ctags-5.8/lregex.c	2016-06-21 23:22:01.098518899 +0000
+@@ -408,7 +408,7 @@
+ 		const char* regexfile = parameter + 1;
+ 		FILE* const fp = fopen (regexfile, "r");
+ 		if (fp == NULL)
+-			error (WARNING | PERROR, regexfile);
++			error (WARNING | PERROR, "%s", regexfile);
+ 		else
+ 		{
+ 			vString* const regex = vStringNew ();

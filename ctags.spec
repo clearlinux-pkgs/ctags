@@ -4,7 +4,7 @@
 #
 Name     : ctags
 Version  : 5.8
-Release  : 2
+Release  : 3
 URL      : http://downloads.sourceforge.net/ctags/ctags-5.8.tar.gz
 Source0  : http://downloads.sourceforge.net/ctags/ctags-5.8.tar.gz
 Summary  : Exuberant Ctags - a multi-language source code indexing tool
@@ -14,6 +14,7 @@ Requires: ctags-bin
 Requires: ctags-doc
 Patch1: ctags-5.7-destdir.patch
 Patch2: cve-2014-7204.patch
+Patch3: build.patch
 
 %description
 Exuberant Ctags generates an index (or tag) file of language objects
@@ -46,6 +47,7 @@ doc components for the ctags package.
 %setup -q -n ctags-5.8
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 %configure --disable-static
