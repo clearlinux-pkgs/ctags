@@ -4,7 +4,7 @@
 #
 Name     : ctags
 Version  : 5.8
-Release  : 3
+Release  : 4
 URL      : http://downloads.sourceforge.net/ctags/ctags-5.8.tar.gz
 Source0  : http://downloads.sourceforge.net/ctags/ctags-5.8.tar.gz
 Summary  : Exuberant Ctags - a multi-language source code indexing tool
@@ -50,10 +50,13 @@ doc components for the ctags package.
 %patch3 -p1
 
 %build
+export LANG=C
+export SOURCE_DATE_EPOCH=1484506314
 %configure --disable-static
 make V=1  %{?_smp_mflags}
 
 %install
+export SOURCE_DATE_EPOCH=1484506314
 rm -rf %{buildroot}
 %make_install
 ## make_install_append content
