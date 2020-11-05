@@ -1,2 +1,8 @@
 # This file contains recursive sources that require this package
+LVM2
 automake
+dialog
+diffstat
+lynx
+source-highlight
+xterm
