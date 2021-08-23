@@ -1,1 +1,0 @@
-ln -sv ctags %{buildroot}/usr/bin/etags

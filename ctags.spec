@@ -4,7 +4,7 @@
 #
 Name     : ctags
 Version  : 5.9.20210822.0
-Release  : 13
+Release  : 14
 URL      : https://github.com/universal-ctags/ctags/archive/p5.9.20210822.0/ctags-5.9.20210822.0.tar.gz
 Source0  : https://github.com/universal-ctags/ctags/archive/p5.9.20210822.0/ctags-5.9.20210822.0.tar.gz
 Summary  : Exuberant Ctags - a multi-language source code indexing tool
@@ -69,13 +69,13 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1629678631
+export SOURCE_DATE_EPOCH=1629678967
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto -fstack-protector-strong -fzero-call-used-regs=used "
 export FCFLAGS="$FFLAGS -fno-lto -fstack-protector-strong -fzero-call-used-regs=used "
 export FFLAGS="$FFLAGS -fno-lto -fstack-protector-strong -fzero-call-used-regs=used "
 export CXXFLAGS="$CXXFLAGS -fno-lto -fstack-protector-strong -fzero-call-used-regs=used "
-%autogen --disable-static
+%autogen --disable-static --enable-etags
 make  %{?_smp_mflags}
 
 %check
@@ -86,7 +86,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1629678631
+export SOURCE_DATE_EPOCH=1629678967
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/ctags
 cp %{_builddir}/ctags-p5.9.20210822.0/COPYING %{buildroot}/usr/share/package-licenses/ctags/74a8a6531a42e124df07ab5599aad63870fa0bd4
@@ -95,9 +95,6 @@ cp %{_builddir}/ctags-p5.9.20210822.0/misc/packcc/LICENSE %{buildroot}/usr/share
 cp %{_builddir}/ctags-p5.9.20210822.0/win32/license/LICENSE.janssen %{buildroot}/usr/share/package-licenses/ctags/26a708b97cbb50e3fce8078dd21d65c8fdd5a605
 cp %{_builddir}/ctags-p5.9.20210822.0/win32/license/LICENSE.libyaml %{buildroot}/usr/share/package-licenses/ctags/c01c212bdf3925189f673e2081b44094023860ea
 %make_install
-## install_append content
-ln -sv ctags %{buildroot}/usr/bin/etags
-## install_append end
 
 %files
 %defattr(-,root,root,-)
