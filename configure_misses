@@ -1,9 +1,16 @@
-Configure miss: whether to install link to etags
-Configure miss: whether to install readtags object file
+Configure miss: building in a git repository
 Configure miss: case-insensitive filenames
-Configure miss: stat.h usability
-Configure miss: stat.h presence
+Configure miss: compiler option needed when checking for declarations
+Configure miss: crtdefs.h
+Configure miss: gcc options needed to detect all undeclared functions
+Configure miss: iconv_open or libiconv_open with -liconv
+Configure miss: perl
+Configure miss: rst2pdf
 Configure miss: stat.h
-Configure miss: types.h usability
-Configure miss: types.h presence
 Configure miss: types.h
+Configure miss: whether _NSGetEnviron is declared
+Configure miss: whether mbrtowc stores incomplete characters
+Configure miss: whether pthread_rwlock_rdlock prefers a writer to a reader
+Configure miss: whether the compiler is clang
+Configure miss: whether the compiler produces multi-arch binaries
+Configure miss: working re_compile_pattern

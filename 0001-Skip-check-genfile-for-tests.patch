@@ -1,0 +1,25 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Patrick McCarty <patrick.mccarty@intel.com>
+Date: Sun, 22 Aug 2021 17:26:23 -0700
+Subject: [PATCH] Skip check-genfile for tests
+
+This target requires being run from the git repo.
+
+Signed-off-by: Patrick McCarty <patrick.mccarty@intel.com>
+---
+ makefiles/testing.mak | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/makefiles/testing.mak b/makefiles/testing.mak
+index 46bc9ff..82229ac 100644
+--- a/makefiles/testing.mak
++++ b/makefiles/testing.mak
+@@ -5,7 +5,7 @@ EXTRA_DIST += misc/units misc/units.py misc/man-test.py
+ EXTRA_DIST += misc/tlib misc/mini-geany.expected
+ MAN_TEST_TMPDIR = ManTest
+ 
+-check: tmain units tlib man-test check-genfile
++check: tmain units tlib man-test
+ 
+ # We may use CLEANFILES, DISTCLEANFILES, or etc.
+ # clean-tlib and clean-gcov are not included

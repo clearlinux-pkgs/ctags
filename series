@@ -1,3 +1,1 @@
-ctags-5.7-destdir.patch
-cve-2014-7204.patch
-build.patch
+0001-Skip-check-genfile-for-tests.patch
