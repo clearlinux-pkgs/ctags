@@ -4,13 +4,14 @@
 #
 Name     : ctags
 Version  : 5.9.20220130.0
-Release  : 37
+Release  : 39
 URL      : https://github.com/universal-ctags/ctags/archive/p5.9.20220130.0/ctags-5.9.20220130.0.tar.gz
 Source0  : https://github.com/universal-ctags/ctags/archive/p5.9.20220130.0/ctags-5.9.20220130.0.tar.gz
 Summary  : Exuberant Ctags - a multi-language source code indexing tool
 Group    : Development/Tools
 License  : BSD-3-Clause GPL-2.0 MIT
 Requires: ctags-bin = %{version}-%{release}
+Requires: ctags-filemap = %{version}-%{release}
 Requires: ctags-license = %{version}-%{release}
 Requires: ctags-man = %{version}-%{release}
 BuildRequires : buildreq-cmake
@@ -39,9 +40,18 @@ Install ctags if you are going to use your system for programming.
 Summary: bin components for the ctags package.
 Group: Binaries
 Requires: ctags-license = %{version}-%{release}
+Requires: ctags-filemap = %{version}-%{release}
 
 %description bin
 bin components for the ctags package.
+
+
+%package filemap
+Summary: filemap components for the ctags package.
+Group: Default
+
+%description filemap
+filemap components for the ctags package.
 
 
 %package license
@@ -64,13 +74,16 @@ man components for the ctags package.
 %setup -q -n ctags-p5.9.20220130.0
 cd %{_builddir}/ctags-p5.9.20220130.0
 %patch1 -p1
+pushd ..
+cp -a ctags-p5.9.20220130.0 buildavx2
+popd
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1643580639
+export SOURCE_DATE_EPOCH=1643581354
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto -fstack-protector-strong -fzero-call-used-regs=used "
 export FCFLAGS="$FFLAGS -fno-lto -fstack-protector-strong -fzero-call-used-regs=used "
@@ -79,15 +92,26 @@ export CXXFLAGS="$CXXFLAGS -fno-lto -fstack-protector-strong -fzero-call-used-re
 %autogen --disable-static --enable-etags
 make  %{?_smp_mflags}
 
+pushd ../buildavx2/
+export CFLAGS="$CFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 "
+export CXXFLAGS="$CXXFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 "
+export FFLAGS="$FFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 "
+export FCFLAGS="$FCFLAGS -m64 -march=x86-64-v3 "
+export LDFLAGS="$LDFLAGS -m64 -march=x86-64-v3 "
+%autogen --disable-static --enable-etags
+make  %{?_smp_mflags}
+popd
 %check
 export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 make %{?_smp_mflags} check
+cd ../buildavx2;
+make %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1643580639
+export SOURCE_DATE_EPOCH=1643581354
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/ctags
 cp %{_builddir}/ctags-p5.9.20220130.0/COPYING %{buildroot}/usr/share/package-licenses/ctags/74a8a6531a42e124df07ab5599aad63870fa0bd4
@@ -96,7 +120,11 @@ cp %{_builddir}/ctags-p5.9.20220130.0/misc/packcc/LICENSE %{buildroot}/usr/share
 cp %{_builddir}/ctags-p5.9.20220130.0/win32/license/LICENCE.pcre2 %{buildroot}/usr/share/package-licenses/ctags/cc7132d685cfac1cac53709962b52590e160450f
 cp %{_builddir}/ctags-p5.9.20220130.0/win32/license/LICENSE.janssen %{buildroot}/usr/share/package-licenses/ctags/26a708b97cbb50e3fce8078dd21d65c8fdd5a605
 cp %{_builddir}/ctags-p5.9.20220130.0/win32/license/LICENSE.libyaml %{buildroot}/usr/share/package-licenses/ctags/c01c212bdf3925189f673e2081b44094023860ea
+pushd ../buildavx2/
+%make_install_v3
+popd
 %make_install
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot}/usr/share/clear/optimized-elf/ %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
@@ -107,6 +135,11 @@ cp %{_builddir}/ctags-p5.9.20220130.0/win32/license/LICENSE.libyaml %{buildroot}
 /usr/bin/etags
 /usr/bin/optscript
 /usr/bin/readtags
+/usr/share/clear/optimized-elf/bin*
+
+%files filemap
+%defattr(-,root,root,-)
+/usr/share/clear/filemap/filemap-ctags
 
 %files license
 %defattr(0644,root,root,0755)
