@@ -4,7 +4,7 @@
 #
 Name     : ctags
 Version  : 5.9.20220313.0
-Release  : 45
+Release  : 46
 URL      : https://github.com/universal-ctags/ctags/archive/p5.9.20220313.0/ctags-5.9.20220313.0.tar.gz
 Source0  : https://github.com/universal-ctags/ctags/archive/p5.9.20220313.0/ctags-5.9.20220313.0.tar.gz
 Summary  : Exuberant Ctags - a multi-language source code indexing tool
@@ -15,7 +15,6 @@ Requires: ctags-filemap = %{version}-%{release}
 Requires: ctags-license = %{version}-%{release}
 Requires: ctags-man = %{version}-%{release}
 BuildRequires : buildreq-cmake
-BuildRequires : buildreq-golang
 BuildRequires : docutils
 BuildRequires : glibc-locale
 BuildRequires : pkgconfig(jansson)
@@ -83,7 +82,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1647268876
+export SOURCE_DATE_EPOCH=1647636170
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto -fstack-protector-strong -fzero-call-used-regs=used "
 export FCFLAGS="$FFLAGS -fno-lto -fstack-protector-strong -fzero-call-used-regs=used "
@@ -111,7 +110,7 @@ cd ../buildavx2;
 make %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1647268876
+export SOURCE_DATE_EPOCH=1647636170
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/ctags
 cp %{_builddir}/ctags-p5.9.20220313.0/COPYING %{buildroot}/usr/share/package-licenses/ctags/74a8a6531a42e124df07ab5599aad63870fa0bd4
