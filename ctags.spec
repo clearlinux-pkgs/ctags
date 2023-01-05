@@ -4,7 +4,7 @@
 #
 Name     : ctags
 Version  : 6.0.20230101.0
-Release  : 94
+Release  : 95
 URL      : https://github.com/universal-ctags/ctags/archive/p6.0.20230101.0/ctags-6.0.20230101.0.tar.gz
 Source0  : https://github.com/universal-ctags/ctags/archive/p6.0.20230101.0/ctags-6.0.20230101.0.tar.gz
 Summary  : Exuberant Ctags - a multi-language source code indexing tool
