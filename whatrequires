@@ -3,5 +3,6 @@ automake
 dialog
 diffstat
 lynx
+ncurses
 source-highlight
 xterm
