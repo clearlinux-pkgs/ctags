@@ -4,10 +4,10 @@
 # Using build pattern: autogen
 #
 Name     : ctags
-Version  : 6.0.20230813.0
-Release  : 129
-URL      : https://github.com/universal-ctags/ctags/archive/p6.0.20230813.0/ctags-6.0.20230813.0.tar.gz
-Source0  : https://github.com/universal-ctags/ctags/archive/p6.0.20230813.0/ctags-6.0.20230813.0.tar.gz
+Version  : 6.0.20230820.0
+Release  : 130
+URL      : https://github.com/universal-ctags/ctags/archive/p6.0.20230820.0/ctags-6.0.20230820.0.tar.gz
+Source0  : https://github.com/universal-ctags/ctags/archive/p6.0.20230820.0/ctags-6.0.20230820.0.tar.gz
 Summary  : Exuberant Ctags - a multi-language source code indexing tool
 Group    : Development/Tools
 License  : BSD-3-Clause GPL-2.0 MIT
@@ -62,10 +62,10 @@ man components for the ctags package.
 
 
 %prep
-%setup -q -n ctags-p6.0.20230813.0
-cd %{_builddir}/ctags-p6.0.20230813.0
+%setup -q -n ctags-p6.0.20230820.0
+cd %{_builddir}/ctags-p6.0.20230820.0
 pushd ..
-cp -a ctags-p6.0.20230813.0 buildavx2
+cp -a ctags-p6.0.20230820.0 buildavx2
 popd
 
 %build
@@ -73,7 +73,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1692024224
+export SOURCE_DATE_EPOCH=1692627132
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export FCFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
@@ -101,7 +101,7 @@ cd ../buildavx2;
 make %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1692024224
+export SOURCE_DATE_EPOCH=1692627132
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/ctags
 cp %{_builddir}/ctags-p%{version}/COPYING %{buildroot}/usr/share/package-licenses/ctags/74a8a6531a42e124df07ab5599aad63870fa0bd4 || :
