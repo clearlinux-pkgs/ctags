@@ -1,5 +1,6 @@
 libc.so.6
 libjansson.so.4
+libm.so.6
 libpcre2-8.so.0
 libseccomp.so.2
 libxml2.so.2
