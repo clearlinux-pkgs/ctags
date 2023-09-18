@@ -1,5 +1,5 @@
 PKG_NAME := ctags
-URL = https://github.com/universal-ctags/ctags/archive/p6.0.20230910.0/ctags-6.0.20230910.0.tar.gz
+URL = https://github.com/universal-ctags/ctags/archive/p6.0.20230917.0/ctags-6.0.20230917.0.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
