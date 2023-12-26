@@ -6,10 +6,10 @@
 # autospec commit: c1050fe
 #
 Name     : ctags
-Version  : 6.0.20231217.0
-Release  : 145
-URL      : https://github.com/universal-ctags/ctags/archive/p6.0.20231217.0/ctags-6.0.20231217.0.tar.gz
-Source0  : https://github.com/universal-ctags/ctags/archive/p6.0.20231217.0/ctags-6.0.20231217.0.tar.gz
+Version  : 6.0.20231224.0
+Release  : 146
+URL      : https://github.com/universal-ctags/ctags/archive/p6.0.20231224.0/ctags-6.0.20231224.0.tar.gz
+Source0  : https://github.com/universal-ctags/ctags/archive/p6.0.20231224.0/ctags-6.0.20231224.0.tar.gz
 Summary  : Exuberant Ctags - a multi-language source code indexing tool
 Group    : Development/Tools
 License  : BSD-3-Clause GPL-2.0 MIT
@@ -64,10 +64,10 @@ man components for the ctags package.
 
 
 %prep
-%setup -q -n ctags-p6.0.20231217.0
-cd %{_builddir}/ctags-p6.0.20231217.0
+%setup -q -n ctags-p6.0.20231224.0
+cd %{_builddir}/ctags-p6.0.20231224.0
 pushd ..
-cp -a ctags-p6.0.20231217.0 buildavx2
+cp -a ctags-p6.0.20231224.0 buildavx2
 popd
 
 %build
@@ -75,7 +75,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1702914843
+export SOURCE_DATE_EPOCH=1703606031
 export GCC_IGNORE_WERROR=1
 CLEAR_INTERMEDIATE_CFLAGS="$CLEAR_INTERMEDIATE_CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 CLEAR_INTERMEDIATE_FCFLAGS="$CLEAR_INTERMEDIATE_FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
@@ -120,7 +120,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1702914843
+export SOURCE_DATE_EPOCH=1703606031
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/ctags
 cp %{_builddir}/ctags-p%{version}/COPYING %{buildroot}/usr/share/package-licenses/ctags/74a8a6531a42e124df07ab5599aad63870fa0bd4 || :
@@ -169,7 +169,9 @@ popd
 /usr/share/man/man7/ctags-lang-asm.7
 /usr/share/man/man7/ctags-lang-autoit.7
 /usr/share/man/man7/ctags-lang-automake.7
+/usr/share/man/man7/ctags-lang-c++.7
 /usr/share/man/man7/ctags-lang-c.7
+/usr/share/man/man7/ctags-lang-cuda.7
 /usr/share/man/man7/ctags-lang-elm.7
 /usr/share/man/man7/ctags-lang-fortran.7
 /usr/share/man/man7/ctags-lang-gdscript.7
@@ -178,6 +180,7 @@ popd
 /usr/share/man/man7/ctags-lang-javascript.7
 /usr/share/man/man7/ctags-lang-julia.7
 /usr/share/man/man7/ctags-lang-kconfig.7
+/usr/share/man/man7/ctags-lang-ldscript.7
 /usr/share/man/man7/ctags-lang-markdown.7
 /usr/share/man/man7/ctags-lang-python.7
 /usr/share/man/man7/ctags-lang-r.7
