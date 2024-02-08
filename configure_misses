@@ -1,23 +1,38 @@
+Configure miss: bp-sym.h
+Configure miss: building in a git repository
 Configure miss: building in a git repository
 Configure miss: building in a git repository
 Configure miss: case-insensitive filenames
 Configure miss: case-insensitive filenames
+Configure miss: case-insensitive filenames
 Configure miss: compiler option needed when checking for declarations
 Configure miss: compiler option needed when checking for declarations
+Configure miss: compiler option needed when checking for declarations
+Configure miss: crtdefs.h
 Configure miss: crtdefs.h
 Configure miss: crtdefs.h
 Configure miss: gcc option to enable large file support
 Configure miss: gcc option to enable large file support
 Configure miss: gcc options needed to detect all undeclared functions
 Configure miss: gcc options needed to detect all undeclared functions
+Configure miss: gcc-14 option to enable C11 features
+Configure miss: gcc-14 option to enable large file support
+Configure miss: gcc-14 options needed to detect all undeclared functions
 Configure miss: iconv_open or libiconv_open with -liconv
 Configure miss: iconv_open or libiconv_open with -liconv
+Configure miss: iconv_open or libiconv_open with -liconv
+Configure miss: libxml-2.0 = 2.12.1
+Configure miss: libxml-2.0 CRLF handling bug... checking for libxml-2.0 = 2.12.0
+Configure miss: rst2pdf
 Configure miss: rst2pdf
 Configure miss: rst2pdf
 Configure miss: stat.h
 Configure miss: stat.h
+Configure miss: stat.h
 Configure miss: types.h
 Configure miss: types.h
+Configure miss: types.h
+Configure miss: whether _NSGetEnviron is declared
 Configure miss: whether _NSGetEnviron is declared
 Configure miss: whether _NSGetEnviron is declared
 Configure miss: whether mbrtowc stores incomplete characters
@@ -26,5 +41,9 @@ Configure miss: whether pthread_rwlock_rdlock prefers a writer to a reader
 Configure miss: whether pthread_rwlock_rdlock prefers a writer to a reader
 Configure miss: whether the compiler is clang
 Configure miss: whether the compiler is clang
+Configure miss: whether the compiler is clang
 Configure miss: whether the compiler produces multi-arch binaries
 Configure miss: whether the compiler produces multi-arch binaries
+Configure miss: whether the compiler produces multi-arch binaries
+Configure miss: x86_64-clr-linux-gnu-pkg-config
+Configure miss: x86_64-clr-linux-gnu-strip
