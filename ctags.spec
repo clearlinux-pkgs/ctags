@@ -7,7 +7,7 @@
 #
 Name     : ctags
 Version  : 6.1.20240204.0
-Release  : 152
+Release  : 153
 URL      : https://github.com/universal-ctags/ctags/archive/p6.1.20240204.0/ctags-6.1.20240204.0.tar.gz
 Source0  : https://github.com/universal-ctags/ctags/archive/p6.1.20240204.0/ctags-6.1.20240204.0.tar.gz
 Summary  : Exuberant Ctags - a multi-language source code indexing tool
@@ -78,7 +78,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1707404067
+export SOURCE_DATE_EPOCH=1707414555
 export GCC_IGNORE_WERROR=1
 CLEAR_INTERMEDIATE_CFLAGS="$CLEAR_INTERMEDIATE_CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 CLEAR_INTERMEDIATE_FCFLAGS="$CLEAR_INTERMEDIATE_FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
@@ -136,7 +136,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1707404067
+export SOURCE_DATE_EPOCH=1707414555
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/ctags
 cp %{_builddir}/ctags-p%{version}/COPYING %{buildroot}/usr/share/package-licenses/ctags/74a8a6531a42e124df07ab5599aad63870fa0bd4 || :
@@ -167,9 +167,6 @@ GOAMD64=v2
 /V3/usr/bin/ctags
 /V3/usr/bin/optscript
 /V3/usr/bin/readtags
-/VA/usr/bin/ctags
-/VA/usr/bin/optscript
-/VA/usr/bin/readtags
 /usr/bin/ctags
 /usr/bin/etags
 /usr/bin/optscript
