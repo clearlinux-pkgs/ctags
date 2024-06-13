@@ -6,10 +6,10 @@
 # autospec commit: fbcebd0
 #
 Name     : ctags
-Version  : 6.1.20240602.0
-Release  : 169
-URL      : https://github.com/universal-ctags/ctags/archive/p6.1.20240602.0/ctags-6.1.20240602.0.tar.gz
-Source0  : https://github.com/universal-ctags/ctags/archive/p6.1.20240602.0/ctags-6.1.20240602.0.tar.gz
+Version  : 6.1.20240609.0
+Release  : 170
+URL      : https://github.com/universal-ctags/ctags/archive/p6.1.20240609.0/ctags-6.1.20240609.0.tar.gz
+Source0  : https://github.com/universal-ctags/ctags/archive/p6.1.20240609.0/ctags-6.1.20240609.0.tar.gz
 Summary  : Exuberant Ctags - a multi-language source code indexing tool
 Group    : Development/Tools
 License  : BSD-3-Clause GPL-2.0 MIT
@@ -64,10 +64,10 @@ man components for the ctags package.
 
 
 %prep
-%setup -q -n ctags-p6.1.20240602.0
-cd %{_builddir}/ctags-p6.1.20240602.0
+%setup -q -n ctags-p6.1.20240609.0
+cd %{_builddir}/ctags-p6.1.20240609.0
 pushd ..
-cp -a ctags-p6.1.20240602.0 buildavx2
+cp -a ctags-p6.1.20240609.0 buildavx2
 popd
 
 %build
@@ -75,7 +75,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1717425268
+export SOURCE_DATE_EPOCH=1718288351
 export GCC_IGNORE_WERROR=1
 CLEAR_INTERMEDIATE_CFLAGS="$CLEAR_INTERMEDIATE_CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 CLEAR_INTERMEDIATE_FCFLAGS="$CLEAR_INTERMEDIATE_FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
@@ -122,7 +122,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1717425268
+export SOURCE_DATE_EPOCH=1718288351
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/ctags
 cp %{_builddir}/ctags-p%{version}/COPYING %{buildroot}/usr/share/package-licenses/ctags/74a8a6531a42e124df07ab5599aad63870fa0bd4 || :
