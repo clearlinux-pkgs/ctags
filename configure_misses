@@ -30,3 +30,5 @@ Configure miss: whether the compiler is clang
 Configure miss: whether the compiler is clang
 Configure miss: whether the compiler produces multi-arch binaries
 Configure miss: whether the compiler produces multi-arch binaries
+Configure miss: whether xmlLineNumbersDefault is deprecated
+Configure miss: whether xmlLineNumbersDefault is deprecated
